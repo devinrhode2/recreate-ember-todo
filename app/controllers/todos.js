@@ -16,7 +16,7 @@ export default Ember.ArrayController.extend({
     var remaining = this.get('remaining');
     return remaining === 1 ? 'item' : 'items';
   }.property('remaining'),
-  
+
   actions: {
     createTodo: function() {
       // Get the todo title set by the "New Todo" text field
@@ -29,6 +29,7 @@ export default Ember.ArrayController.extend({
         title: title,
         isCompleted: false
       });
+      console.log('BOOM', this.store);
 
       // Clear the "New Todo" text field
       this.set('newTitle', '');
